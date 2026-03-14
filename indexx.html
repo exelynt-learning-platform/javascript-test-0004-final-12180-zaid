@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function printPattern() {
+        let n = 4;
+        let size = 2 * n - 1;
+
+        for (let i = 0; i < size; i++) {
+          let line = "";
+
+          for (let j = 0; j < size; j++) {
+            let layer = Math.min(i, j, size - 1 - i, size - 1 - j);
+            let value = n - layer;
+
+            line += value;
+
+            if (j < size - 1) line += " ";
+          }
+
+          console.log(line);
+        }
+      }
+
+      printPattern();
+    </script>
+  </body>
+</html>
